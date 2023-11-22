@@ -1,0 +1,61 @@
+query RepositoriesQuery($organizationName: String!, $after: String) {
+  organization(login: $organizationName) {
+    repositories(first: 25, after: $after) {
+      pageInfo {
+        endCursor
+        hasNextPage
+      }
+      nodes {
+        name
+        stargazerCount
+        isArchived
+        url
+        readmeMdLower: object(expression: "HEAD:readme.md") {
+          ... on Blob {
+            text
+          }
+        }
+        readmeMdUpper: object(expression: "HEAD:README.md") {
+          ... on Blob {
+            text
+          }
+        }
+        readmeAdocLower: object(expression: "HEAD:readme.adoc") {
+          ... on Blob {
+            text
+          }
+        }
+        readmeAdocUpper: object(expression: "HEAD:README.adoc") {
+          ... on Blob {
+            text
+          }
+        }
+        settingsGradle: object(expression: "HEAD:settings.gradle") {
+          ... on Blob {
+            text
+          }
+        }
+        settingsGradleKts: object(expression: "HEAD:settings.gradle.kts") {
+          ... on Blob {
+            text
+          }
+        }
+        pomXml: object(expression: "HEAD:pom.xml") {
+          ... on Blob {
+            text
+          }
+        }
+        gradleEnterpriseXml: object(expression: "HEAD:.mvn/gradle-enterprise.xml") {
+          ... on Blob {
+            text
+          }
+        }
+        latestCommit: object(expression: "HEAD") {
+          ... on Commit {
+            committedDate
+          }
+        }
+      }
+    }
+  }
+}
