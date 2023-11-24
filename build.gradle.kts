@@ -1,7 +1,7 @@
 plugins {
     id("application")
     id("com.apollographql.apollo3") version "3.8.2"
-    kotlin("jvm") version "1.9.20"
+    kotlin("jvm") version "1.9.21"
 }
 
 kotlin {
