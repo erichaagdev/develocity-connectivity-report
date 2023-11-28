@@ -7,7 +7,7 @@ An example report can be seen [here](https://scans.gradle.com/s/2iznweiyla3zq/co
 ## Requirements
 
 - Java 8 or later
-- A [GitHub personal access token](https://github.com/settings/tokens)
+- A [GitHub personal access token](https://github.com/settings/tokens) for API access
   - The token does not require any additional scopes
 
 ## Usage
@@ -31,4 +31,4 @@ The report configuration can be found [here](src/main/kotlin/dev/erichaag/Main.k
 ## GitHub Actions
 
 This report is run on a weekly basis using GitHub Actions.
-View the latest report [here](https://github.com/erichaagdev/develocity-connectivity-report/actions).
+View the latest report [here](https://ge.solutions-team.gradle.com/scans?search.names=CI%20workflow&search.timeZoneId=America%2FChicago&search.values=Run%20Develocity%20Connectivity%20Report).
