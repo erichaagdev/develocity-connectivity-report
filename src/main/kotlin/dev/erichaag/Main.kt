@@ -9,7 +9,7 @@ fun main() {
             exclude(name = "gradle-plugins", reason = "no activity since 2017")
             exclude(name = "spring-boot-data-geode", reason = "project EOL")
             exclude(name = "spring-data", reason = "empty repository")
-            exclude(name = "spring-data-bom", reason = "maintainers declined PR: https://github.com/spring-projects/spring-data-bom/pull/185#issuecomment-1827968368")
+            exclude(name = "spring-data-bom", reason = "maintainers declined PR: https://github.com/spring-projects/spring-data-bom/pull/185")
             exclude(name = "spring-data-book", reason = "no activity since 2019")
             exclude(name = "spring-data-dev-tools", reason = "maintainers declined PR: https://github.com/spring-projects/spring-data-dev-tools/pull/222")
             exclude(name = "spring-data-envers", reason = "merged with Spring Data JPA")
