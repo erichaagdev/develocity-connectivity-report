@@ -24,12 +24,6 @@ Run the report by invoking the Gradle `run` task.
 ./gradlew run
 ```
 
-Publish a build scan to easily share the results, assuming you agree to the [Gradle Terms of Service](https://gradle.com/terms-of-service).
-
-```shell
-./gradlew run -PagreeToGradleTermsOfService=yes
-```
-
 ## Configuration
 
 The report configuration can be found [here](src/main/kotlin/dev/erichaag/Main.kt).

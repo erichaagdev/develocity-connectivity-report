@@ -24,6 +24,7 @@ jobs:
       - name: Set up Gradle
         uses: gradle/gradle-build-action@v2
       - name: Run
-        run: ./gradlew run -PagreeToGradleTermsOfService=yes
+        run: ./gradlew run
         env:
           GITHUB_API_KEY: ${{ secrets.GH_API_KEY }}
+          GRADLE_ENTERPRISE_ACCESS_KEY: ${{ secrets.GRADLE_ENTERPRISE_ACCESS_KEY }}
