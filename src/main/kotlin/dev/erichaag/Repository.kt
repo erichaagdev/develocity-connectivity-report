@@ -13,7 +13,11 @@ data class Repository(
     val lastCommit: String,
 ) {
 
-    fun hasBadge() = readme != null && readme.contains("Revved") && readme.contains("Gradle") && readme.contains("Enterprise")
+    fun hasBadge() = hasGradleEnterpriseBadge() || hasDevelocityBadge()
+
+    fun hasGradleEnterpriseBadge() = readme != null && readme.contains("Revved up by Gradle Enterprise")
+
+    fun hasDevelocityBadge() = readme != null && readme.contains("Revved up by Develocity")
 
     fun isGradle() = settingsGradle != null || settingsGradleKts != null
 

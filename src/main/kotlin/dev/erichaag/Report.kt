@@ -37,7 +37,7 @@ private fun printGradleReport(repositories: List<Repository>, exclusions: List<E
         buildTool = "Gradle",
         repositories = repositories.filter { it.isGradle() },
         exclusions = exclusions,
-        columns = listOf("name", "stars", "last commit", "badge", "plugin", "url")
+        columns = listOf("name", "stars", "last_commit", "badge", "ge_badge", "dv_badge", "plugin", "url")
     )
 }
 
@@ -46,7 +46,7 @@ private fun printMavenReport(repositories: List<Repository>, exclusions: List<Ex
         buildTool = "Maven",
         repositories = repositories.filter { it.isMaven() },
         exclusions = exclusions,
-        columns = listOf("name", "stars", "last commit", "badge", "extension", "url")
+        columns = listOf("name", "stars", "last_commit", "badge", "ge_badge", "dv_badge", "extension", "url")
     )
 }
 
@@ -62,6 +62,8 @@ private fun printReport(buildTool: String, repositories: List<Repository>, exclu
                 it.stars,
                 it.lastCommit,
                 it.hasBadge().toYesNo(),
+                it.hasGradleEnterpriseBadge().toYesNo(),
+                it.hasDevelocityBadge().toYesNo(),
                 (if (it.isGradle()) it.hasPlugin() else it.hasExtension()).toYesNo(),
                 it.url
             )
@@ -79,7 +81,7 @@ private fun isExcludedProject(repository: Repository, exclusions: List<ExcludedP
 private fun printTable(content: TableDsl.() -> Unit) {
     table {
         cellStyle {
-            paddingRight = 1
+            paddingRight = 2
         }
         content()
     }.run { println(this) }
