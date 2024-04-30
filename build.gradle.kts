@@ -26,7 +26,7 @@ repositories {
 }
 
 dependencies {
-    implementation("com.apollographql.apollo3:apollo-runtime:3.8.2")
+    implementation("com.apollographql.apollo3:apollo-runtime:3.8.4")
     implementation("com.jakewharton.picnic:picnic:0.7.0")
     implementation("org.jetbrains.kotlinx:kotlinx-coroutines-core")
 }
