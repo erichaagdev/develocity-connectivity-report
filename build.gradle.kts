@@ -1,6 +1,6 @@
 plugins {
     id("application")
-    id("com.apollographql.apollo3") version "3.8.2"
+    id("com.apollographql.apollo3") version "3.8.4"
     embeddedKotlin("jvm")
 }
 
