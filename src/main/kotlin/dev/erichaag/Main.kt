@@ -25,6 +25,7 @@ fun main() {
             exclude(name = "spring-test-data-geode", reason = "project EOL")
         }
         organization("spring-cloud")
+        organization("micrometer-metrics")
         organization("apache")
     }
 
