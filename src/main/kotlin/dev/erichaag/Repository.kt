@@ -23,8 +23,16 @@ data class Repository(
 
     fun isMaven() = pomXml != null
 
-    fun hasPlugin() = settingsGradle != null && settingsGradle.contains("com.gradle.enterprise") ||
-            settingsGradleKts != null && settingsGradleKts.contains("com.gradle.enterprise")
+    fun hasPlugin() = settingsContains("com.gradle.enterprise")
+            || settingsContains("com.gradle.develocity")
+            || settingsContains("io.spring.ge.conventions")
+            || settingsContains("io.spring.develocity.conventions")
+
 
     fun hasExtension() = gradleEnterpriseXml != null
+
+    private fun settingsContains(value: String) =
+        settingsGradle != null && settingsGradle.contains(value) ||
+                settingsGradleKts != null && settingsGradleKts.contains(value)
+
 }
