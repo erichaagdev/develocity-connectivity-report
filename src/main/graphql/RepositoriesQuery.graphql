@@ -45,7 +45,17 @@ query RepositoriesQuery($organizationName: String!, $after: String) {
             text
           }
         }
+        develocityXml: object(expression: "HEAD:.mvn/develocity.xml") {
+          ... on Blob {
+            text
+          }
+        }
         gradleEnterpriseXml: object(expression: "HEAD:.mvn/gradle-enterprise.xml") {
+          ... on Blob {
+            text
+          }
+        }
+        extensionsXml: object(expression: "HEAD:.mvn/extensions.xml") {
           ... on Blob {
             text
           }

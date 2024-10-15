@@ -59,7 +59,9 @@ class GitHubClient(apiKey: String) {
             settingsGradle = node.settingsGradle?.onBlob?.text,
             settingsGradleKts = node.settingsGradleKts?.onBlob?.text,
             pomXml = node.pomXml?.onBlob?.text,
+            develocityXml = node.develocityXml?.onBlob?.text,
             gradleEnterpriseXml = node.gradleEnterpriseXml?.onBlob?.text,
+            extensionsXml = node.extensionsXml?.onBlob?.text,
             lastCommit = node.latestCommit?.onCommit?.committedDate.toString().take(10),
         )
     }

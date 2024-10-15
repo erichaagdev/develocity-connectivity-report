@@ -9,7 +9,9 @@ data class Repository(
     val settingsGradle: String?,
     val settingsGradleKts: String?,
     val pomXml: String?,
+    val develocityXml: String?,
     val gradleEnterpriseXml: String?,
+    val extensionsXml: String?,
     val lastCommit: String,
 ) {
 
@@ -28,8 +30,9 @@ data class Repository(
             || settingsContains("io.spring.ge.conventions")
             || settingsContains("io.spring.develocity.conventions")
 
-
-    fun hasExtension() = gradleEnterpriseXml != null
+    fun hasExtension() = develocityXml != null
+            || gradleEnterpriseXml != null
+            || extensionsXml != null && extensionsXml.contains("develocity-conventions-maven-extension")
 
     private fun settingsContains(value: String) =
         settingsGradle != null && settingsGradle.contains(value) ||
